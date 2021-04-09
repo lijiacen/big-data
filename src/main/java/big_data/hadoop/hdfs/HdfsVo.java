@@ -1,4 +1,5 @@
 package big_data.hadoop.hdfs;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FSDataOutputStream;
@@ -13,7 +14,8 @@ import java.io.IOException;
 public class HdfsVo {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFS", "hdfs://49.234.108.177:9000");
+        //        conf.set("fs.defaultFS", "hdfs://49.234.108.177:9000");
+        conf.set("fs.defaultFS", "hdfs://1.15.61.173:9000");
         conf.set("dfs.client.use.datanode.hostname", "true");
         FileSystem fileSystem = FileSystem.get(conf);
         // put(fileSystem);
