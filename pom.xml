@@ -14,7 +14,8 @@
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
             <version>3.2.0</version>
-            <scope>provided</scope>
+            <!--provided表示这个依赖只在编译时候，执行或者打jar包时候都不使用-->
+            <!-- <scope>provided</scope>-->
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-assembly-plugin -->
         <dependency>
