@@ -10,8 +10,8 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.IOException;
 
-/** 读取HDFS上的文件 */
-public class WordCountJob {
+/** 只有map，无reduce */
+public class WordCountJobNoReduce {
 
     public static void main(String[] args) {
         try {
@@ -36,10 +36,8 @@ public class WordCountJob {
             job.setMapOutputKeyClass(Text.class);
             job.setMapOutputValueClass(LongWritable.class);
 
-            // 指定reduce相关代码
-            job.setReducerClass(MyReducer.class);
-            job.setOutputKeyClass(Text.class);
-            job.setOutputValueClass(LongWritable.class);
+            // 禁用reduce
+            job.setNumReduceTasks(0);
 
             // 提交job
             job.waitForCompletion(true);
